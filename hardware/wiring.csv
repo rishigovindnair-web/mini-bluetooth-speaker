@@ -1,0 +1,12 @@
+From,To,Wire,Note
+USB-C cable VBUS (5 V),TP4056 module USB-C 5V,red,Plug into the module's own USB-C port. Its IN+/IN- pads are an alternate input and are not used.
+USB-C cable GND,TP4056 module USB-C GND,black,
+TP4056 module B+,Cell + (nickel tab),red,"Cell connects here only. Connect the cell LAST, after everything else is wired."
+TP4056 module B-,Cell - (nickel tab),black,
+TP4056 module OUT+,Slide switch (one side pin),red,"Switch sits in the recess on the +X end wall. Clip the unused side pin short."
+Slide switch (middle pin),MH-M38 VBAT,red,
+TP4056 module OUT-,MH-M38 GND,black,
+MH-M38 L+,Speaker terminal,blue,One channel only; speaker polarity is arbitrary for a single driver.
+MH-M38 L-,Speaker terminal,grey,
+MH-M38 R+ / R-,not connected,,Never tie L- and R- together.
+MH-M38 5V pad and micro-USB,not connected,,Do not use the micro-USB or the 5V pad while the battery is on VBAT.
