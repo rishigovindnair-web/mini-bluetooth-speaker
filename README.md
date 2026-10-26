@@ -132,6 +132,8 @@ Final test. Turn switch on. Connect. Play. Charge via slot on end wall.
 
 ```
 cad/
+├── speaker_cad.py   CadQuery source that regenerates everything in cad/
+├── requirements.txt
 ├── print/        Parts to print
 │   ├── 01_enclosure_base.step/.stl
 │   └── 02_enclosure_lid.step/.stl
@@ -149,11 +151,24 @@ cad/
 docs/
 ├── wiring.png/.svg
 └── images/
+hardware/
+├── kicad/        KiCad schematic (open bt-speaker.kicad_pro)
+├── wiring_schematic.pdf/.svg/.png
+└── wiring.csv    Every connection as a list
+firmware/
+└── README.md     Why there is no firmware
 ```
 
 All CAD drawings are in mm. All part files are in the same coordinate system as the assembly. Can be imported into any CAD tool and will be in the correct position.
 
 If you are replacing a part, check against must match spec column in [BOM.csv](BOM.csv). Also check against the reference model. The tightest fit will be the height of the speaker driver (1.2mm clearance from cell) and amplifier pocket.
+
+## Schematic and CAD source
+
+- **Schematic** - Open `hardware/kicad/bt-speaker.kicad_pro` in KiCad 7 or newer. Exports are in `hardware/wiring_schematic.pdf/.svg/.png`. The schematic doesn't show the slide switch yet. For the switch, follow `docs/wiring.png` and `hardware/wiring.csv` (OUT+ to switch, switch to amplifier VBAT).
+- **Regenerate the CAD** - `pip install -r cad/requirements.txt`, then `cd cad` and `python speaker_cad.py`. This rewrites every file in `cad/print`, `cad/reference` and `cad/assembly`. Dimensions are in the PARAMETERS block at the top of the script.
+- **Change the name on the case** - `SPEAKER_NAME="Alex" python speaker_cad.py`. Use `SPEAKER_NAME=""` for no name. The lettering may come out in a slightly different font depending on your CadQuery version.
+- **Firmware** - There isn't any. `firmware/README.md` explains why.
 
 ## Licence
 
