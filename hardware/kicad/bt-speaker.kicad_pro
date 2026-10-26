@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "filename": "bt-speaker.kicad_pro",
+    "version": 1
+  },
+  "schematic": {
+    "legacy_lib_dir": "",
+    "legacy_lib_list": []
+  },
+  "sheets": [
+    [
+      "fadfb6dc-59bf-48f6-97ac-49ea3e42ecc5",
+      ""
+    ]
+  ],
+  "text_variables": {}
+}
